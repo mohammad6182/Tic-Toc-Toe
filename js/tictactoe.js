@@ -13,6 +13,7 @@ function placeXOrO(squareNumber) {
         let select = document.getElementById(squareNumber);
         //this condition checks who's turn it is
         if (activePlayer=== 'X' ) {
+            select.style.backgroundImage = 'url("images/x.png")';
             //if activePlayer is equal to 'X' or'O' so, if not 'X' it must be 'O'
         }else {
             //if activePlayer is equal to 'O' , the o.png is placed in HTML.
