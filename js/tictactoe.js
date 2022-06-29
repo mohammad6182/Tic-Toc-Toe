@@ -8,7 +8,7 @@ function placeXOrO(squareNumber) {
     // this condition ensure a square hasnt been selected already.
     // the .some() method is used to check each element of selectedSquare array
     // to see if contains the square number clicked on.
-    if (!selectedSquares.some(Element => Element.includes(squareNumber))) {
+    if (!selectedSquares.some(element => element.includes(squareNumber))) {
         // this varieable retrieves the html element id that was clicked.
         let select = document.getElementById(squareNumber);
         //this condition checks who's turn it is
@@ -31,8 +31,9 @@ function placeXOrO(squareNumber) {
         }else {
             // change the activeplayer to 'X'.
             activePlayer = 'X';
+        }
             // this function plays placemet sound.
-            Audio('./media/place.mp3');
+            audio('./media/place.mp3');
             // this condition checks to see if it is computers turn.
             if (activePlayer === 'O') {
             // this function disables clicking for computer choice.
@@ -43,6 +44,7 @@ function placeXOrO(squareNumber) {
             //returning true is needed for our computersTurn() function to work.
             return true;
         }
+    
         // this function results in a random square being selected
         function computersTurn() {
             // this boolean is needed for our while loop
@@ -52,7 +54,7 @@ function placeXOrO(squareNumber) {
             // this condition allows our while loop to keep typing if a square is selected already
             while(!success) {
                 // A random number n=between 0 and 8 is selected.
-                pickASquare= String(Math.floor(Math.random() * 9));
+                pickASquare = String(Math.floor(Math.random() * 9));
                 // if the random number evaluated returns true, the square hasnt been selected yet.
                 if (placeXOrO(pickASquare)) {
                     //this line calls the function. 
@@ -65,7 +67,7 @@ function placeXOrO(squareNumber) {
             }
         }
     }
-}
+
 
                 // this function parses the selectedSquares array to search for win conditions.
                 // drawWinLine function is called to draw line if condition is met.
@@ -200,9 +202,9 @@ function placeXOrO(squareNumber) {
                     //this for loop iterates through each HTML square element
                     for (let i= 0; i<9; i++) {
                         // this variable gets the HTML element i.
-                        let square = document.getElementById(string(i));
+                        let square = document.getElementById(String(i));
                         // this removes our elements background images
-                        square.style.backgroundImage= ' ';
+                        square.style.backgroundImage= '';
                     }
                     // this resets our array so it is empty and we can start over
                     selectedSquares = [];
