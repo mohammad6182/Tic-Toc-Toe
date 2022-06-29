@@ -93,7 +93,7 @@ function placeXOrO(squareNumber) {
                     // SQUARE ARE SELECTED THE CODE EXECUTES.
                     else if (selectedSquares.length >= 9 ) {
                         // this function plays the tie game sound
-                        Audio('./media/tie.mp3');
+                        audio('./media/tie.mp3');
                         // this function sets a .3 seconds timer before the resetGame is called.
                         setTimeout(function () { resetGame(); }, 500); 
                     }        
